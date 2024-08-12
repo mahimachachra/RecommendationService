@@ -1,15 +1,23 @@
 package org.recommendations.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
+@Data
 @Entity
 @Table(name = "video")
+@NoArgsConstructor
+@AllArgsConstructor
 public class Video {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "video_id")
     private Long videoId;
 
+    @Getter
     @Column(name = "title", nullable = false)
     private String title;
 
@@ -25,64 +33,4 @@ public class Video {
     @Column(name = "views")
     private int views;
 
-    // Constructors
-    public Video() {}
-
-    public Video(Long videoId, String title, String description, String author, String url, int views) {
-        this.videoId = videoId;
-        this.title = title;
-        this.description = description;
-        this.author = author;
-        this.url = url;
-        this.views = views;
-    }
-
-    // Getters and Setters
-    public Long getVideoId() {
-        return videoId;
-    }
-
-    public void setVideoId(Long videoId) {
-        this.videoId = videoId;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
-    }
-
-    public int getViews() {
-        return views;
-    }
-
-    public void setViews(int views) {
-        this.views = views;
-    }
 }
