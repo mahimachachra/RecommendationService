@@ -13,4 +13,4 @@ Prerequisites :
    ![img_2.png](img_2.png)
 5. Use postman to hit your local application.
    ![img_3.png](img_3.png)
-6. Please find the sample postman collection in the src/main/resources
+6. For postman request please import the curl command : curl --location 'http://localhost:8080/api/recommendations?limit=1'
